@@ -1,7 +1,10 @@
 {
   "name": "florian-kromer.eu",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
-  "postCreateCommand": "npm install; ./node_modules/.bin/astro dev",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/git-lfs:1": {}
+  },
+  "postCreateCommand": "npm install",
   "forwardPorts": [4321],
   "portsAttributes": {
     "4321": {
