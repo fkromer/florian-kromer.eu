@@ -18,7 +18,9 @@
     "vscode": {
       "extensions": [
         "astro-build.astro-vscode",
-        "DavidAnson.vscode-markdownlint"
+        "DavidAnson.vscode-markdownlint",
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-german"
       ],
       "settings": {
         "editor.formatOnSave": true,
