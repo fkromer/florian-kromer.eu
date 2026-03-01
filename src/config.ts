@@ -17,21 +17,21 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  site: "https://example.com/", // your site url
-  title: "Your's blog",
-  slogan: "Exploring the World with Code",
-  description: "write a description here",
+  site: "https://florian-kromer-eu.statichost.eu/",
+  title: "Florian Kromer",
+  slogan: "Systems thinking based problem solving.",
+  description: "Embedded Linux SW Architect, spare time website developer.",
   social: {
-    github: "https://github.com/larry-xue/astro-zen-blog", // leave empty if you don't want to show the github
-    linkedin: "https://www.linkedin.com/in/someone/", // leave empty if you don't want to show the linkedin
-    email: "example@gmail.com", // leave empty if you don't want to show the email
-    rss: true, // set this to false if you don't want to provide an rss feed
+    github: "https://github.com/fkromer",
+    linkedin: "https://www.linkedin.com/in/floriankromer/",
+    email: "kromer-florian@protonmail.com",
+    rss: true,
   },
   homepage: {
     maxPosts: 5,
     tags: [],
     excludeTags: [],
   },
-  googleAnalysis: "", // your google analysis id
-  search: true, // set this to false if you don't want to provide a search feature
+  googleAnalysis: "",
+  search: true,
 };
