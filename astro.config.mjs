@@ -7,6 +7,10 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: siteConfig.site,
+  server: {
+    host: true,
+    port: 3000,
+  },
   integrations: [tailwind(), sitemap()],
   markdown: {
     rehypePlugins: [

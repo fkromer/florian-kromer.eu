@@ -6,10 +6,10 @@
   },
   "postCreateCommand": "npm install",
   "forwardPorts": [
-    4321
+    3000
   ],
   "portsAttributes": {
-    "4321": {
+    "3000": {
       "label": "Astro Dev Server",
       "onAutoForward": "notify"
     }
