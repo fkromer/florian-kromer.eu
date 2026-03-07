@@ -53,7 +53,7 @@ florian-kromer.eu/
 To run a development server execute
 
 ```shell
-./node_modules/.bin/astro dev
+npm run dev
 ```
 
 To upgrade dependencies execute
