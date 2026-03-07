@@ -81,6 +81,12 @@ To upgrade dependencies execute
 npx @astrojs/upgrade
 ```
 
+To fix security vulnerabilities execute
+
+```shell
+npm audit fix
+```
+
 To create a new blog post execute
 
 ```shell
