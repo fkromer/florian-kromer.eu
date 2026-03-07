@@ -1,4 +1,4 @@
-# AGENT.md
+# AGENTS.md
 
 ## Project structure
 
@@ -8,33 +8,45 @@ The project structure is as follows:
 ```
 florian-kromer.eu/
 ├── .devcontainer/                # devcontainer configuration
+├── public/                       # static assets
+├── scripts/                      # utility scripts
+│   └── add-post.js               # script to create new blog posts
 ├── src/
 │   ├── components/               # astro UI components
+│   ├── config.ts                 # site configuration
 │   ├── content/
-│   │   ├── blog/                 # Markdown Blog post files
-│   │   └── config.ts             # definition of data schema for blog posts 
-│   ├── layouts/                  # astro and HTML Page layouts
-│   ├── pages/                    # astro base layouts for pages
+│   │   ├── blog/                 # markdown blog post files
+│   │   └── config.ts             # data schema definition for blog posts
+│   ├── layouts/
+│   │   ├── BaseLayout.astro      # base page layout
+│   │   ├── BlogPost.astro        # blog post layout
+│   │   └── Layout.astro          # main layout wrapper
+│   ├── pages/
+│   │   ├── 404.astro             # 404 error page
+│   │   ├── archive.astro         # blog archive page
+│   │   ├── index.astro           # homepage
+│   │   ├── robots.txt.ts         # dynamic robots.txt generation
+│   │   ├── rss.xml.js            # RSS feed generation
 │   │   ├── api/
-│   │       └──search.json.ts.ts  # business locig for the search functionality
-│   │   ├── blog/                 # blog specific astro base layout and component
-│   │   ├── tags/                 # blog tag specific astro base layout and component
-│   │   ├── robots.txt.ts         # business logic for dynamic generation of the robots.txt file
-│   │   └── rss.mxl.js            # business logic related to rss feed
+│   │   │   └── search.json.ts    # search API endpoint
+│   │   ├── blog/
+│   │   │   ├── [...page].astro   # blog pagination
+│   │   │   └── [slug].astro      # individual blog post page
+│   │   └── tags/
+│   │       ├── [tag].astro       # tag-specific blog posts
+│   │       └── index.astro       # all tags page
 │   ├── scripts/
-│   │   └── theme.ts              # business logic for the color scheme switch
-│   ├── transitions/
-│   │   └── transition.css        # astro transitions for page changes
-│   ├── utils/                    # utility business logic
-│   └── config.ts                 # Site configuration
-├── public/                       # Static assets
+│   │   └── theme.ts              # color scheme switching logic
+│   ├── styles/
+│   │   └── transitions.css       # astro page transition styles
+│   └── utils/
+│       ├── date.ts               # date utility functions
+│       └── posts.ts              # blog post utility functions
 ├── astro.config.mjs              # astro configuration
-├── tailwind.config.mjs           # tailwind configuration
-└── tsconfig.json                 # TypeScript configuration
+├── package.json                  # project dependencies
+├── tailwind.config.mjs           # tailwind CSS configuration
+└── tsconfig.json                 # typescript configuration
 ```
-
-- The directory `src/content/components` contains astro components
-- The directory `src/content/blog` contains blog posts in markdown syntax.
 
 ## Documentation references
 
