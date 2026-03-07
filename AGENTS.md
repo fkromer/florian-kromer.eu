@@ -48,9 +48,24 @@ florian-kromer.eu/
 └── tsconfig.json                 # typescript configuration
 ```
 
+## Development hints
+
+To run a development server execute
+
+```shell
+./node_modules/.bin/astro dev
+```
+
+To upgrade dependencies execute
+
+```shell
+npx @astrojs/upgrade
+```
+
 ## Documentation references
 
 - [astro documentation](https://docs.astro.build/en/getting-started/) with documentation source code in
   <https://github.com/withastro/docs/tree/main/src/content/docs/en>
+- [theme documentation](https://github.com/larry-xue/astro-zen-blog/blob/main/README.md)
 - [tailwindcss documentation](https://v2.tailwindcss.com/docs) with documentation source code in
   <https://github.com/tailwindlabs/tailwindcss.com/tree/main/src/docs>
