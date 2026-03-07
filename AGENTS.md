@@ -7,6 +7,7 @@ The project structure is as follows:
 
 ```
 florian-kromer.eu/
+├── .devcontainer/                # devcontainer configuration
 ├── src/
 │   ├── components/               # astro UI components
 │   ├── content/
@@ -27,7 +28,9 @@ florian-kromer.eu/
 │   ├── utils/                    # utility business logic
 │   └── config.ts                 # Site configuration
 ├── public/                       # Static assets
-└── astro.config.mjs              # astro configuration
+├── astro.config.mjs              # astro configuration
+├── tailwind.config.mjs           # tailwind configuration
+└── tsconfig.json                 # TypeScript configuration
 ```
 
 - The directory `src/content/components` contains astro components
@@ -35,5 +38,7 @@ florian-kromer.eu/
 
 ## Documentation references
 
-- [astro docs](https://docs.astro.build/en/getting-started/) with documentation source code in
+- [astro documentation](https://docs.astro.build/en/getting-started/) with documentation source code in
   <https://github.com/withastro/docs/tree/main/src/content/docs/en>
+- [tailwindcss documentation](https://v2.tailwindcss.com/docs) with documentation source code in
+  <https://github.com/tailwindlabs/tailwindcss.com/tree/main/src/docs>
