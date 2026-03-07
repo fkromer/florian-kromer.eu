@@ -11,6 +11,13 @@ export default defineConfig({
     host: true,
     port: 3000,
   },
+  i18n: {
+    defaultLocale: 'de',
+    locales: ['de', 'en'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   integrations: [tailwind(), sitemap()],
   markdown: {
     rehypePlugins: [

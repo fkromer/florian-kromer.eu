@@ -2,20 +2,52 @@
 import ThemeToggle from "./ThemeToggle.astro";
 import { siteConfig } from "../config";
 import Search from "./Search.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
-const navItems = [
-  { href: "/", text: "Home" },
-  { href: "/professional", text: "Professional" },
-  { href: "/volunteer", text: "Volunteer" },
-  { href: "/blog", text: "Blog" },
-  { href: "/tags", text: "Tags" },
-  { href: "/archive", text: "Archive" },
+const locale = Astro.currentLocale as "de" | "en";
+
+const navItemsBase = [
+  { href: "", key: "home" },
+  { href: "professional", key: "professional" },
+  { href: "volunteer", key: "volunteer" },
+  { href: "blog", key: "blog" },
+  { href: "tags", key: "tags" },
+  { href: "archive", key: "archive" },
 ];
+
+const translations = {
+  en: {
+    home: "Home",
+    professional: "Professional",
+    volunteer: "Volunteer",
+    blog: "Blog",
+    tags: "Tags",
+    archive: "Archive",
+  },
+  de: {
+    home: "Startseite",
+    professional: "Beruf",
+    volunteer: "Ehrenamt",
+    blog: "Blog",
+    tags: "Tags",
+    archive: "Archiv",
+  },
+};
+
+const navItems = navItemsBase.map((item) => ({
+  href: getRelativeLocaleUrl(locale, item.href),
+  text: translations[locale][item.key as keyof typeof translations.en],
+}));
+
+const otherLocale = locale === "en" ? "de" : "en";
+const otherLocaleUrl = getRelativeLocaleUrl(otherLocale, "");
 ---
 
 <header class="py-6">
   <nav class="flex justify-between items-center flex-wrap">
-    <a href="/" class="text-2xl font-bold text-gray-900 dark:text-white"
+    <a
+      href={getRelativeLocaleUrl(locale, "")}
+      class="text-2xl font-bold text-gray-900 dark:text-white"
       >{siteConfig.title}</a
     >
     <div class="flex items-center gap-6">
@@ -33,6 +65,12 @@ const navItems = [
           ))
         }
       </ul>
+      <a
+        href={otherLocaleUrl}
+        class="text-sm text-gray-700 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white"
+      >
+        {otherLocale.toUpperCase()}
+      </a>
       {siteConfig.search && <Search />}
       <ThemeToggle />
     </div>

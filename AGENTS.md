@@ -24,7 +24,6 @@ florian-kromer.eu/
 │   ├── pages/
 │   │   ├── 404.astro             # 404 error page
 │   │   ├── archive.astro         # blog archive page
-│   │   ├── index.astro           # homepage
 │   │   ├── robots.txt.ts         # dynamic robots.txt generation
 │   │   ├── rss.xml.js            # RSS feed generation
 │   │   ├── api/
@@ -32,6 +31,14 @@ florian-kromer.eu/
 │   │   ├── blog/
 │   │   │   ├── [...page].astro   # blog pagination
 │   │   │   └── [slug].astro      # individual blog post page
+│   │   ├── de/                   # German (de) localized pages
+│   │   │   ├── index.astro       # homepage (German)
+│   │   │   ├── professional.astro # professional activity page (German)
+│   │   │   └── volunteer.astro   # volunteer work page (German)
+│   │   ├── en/                   # English (en) localized pages
+│   │   │   ├── index.astro       # homepage (English)
+│   │   │   ├── professional.astro # professional activity page (English)
+│   │   │   └── volunteer.astro   # volunteer work page (English)
 │   │   └── tags/
 │   │       ├── [tag].astro       # tag-specific blog posts
 │   │       └── index.astro       # all tags page
@@ -41,8 +48,9 @@ florian-kromer.eu/
 │   │   └── transitions.css       # astro page transition styles
 │   └── utils/
 │       ├── date.ts               # date utility functions
+│       ├── i18n.ts               # internationalization helper functions
 │       └── posts.ts              # blog post utility functions
-├── astro.config.mjs              # astro configuration
+├── astro.config.mjs              # astro configuration (includes i18n settings)
 ├── package.json                  # project dependencies
 ├── tailwind.config.mjs           # tailwind CSS configuration
 └── tsconfig.json                 # typescript configuration
@@ -56,6 +64,17 @@ To run a development server execute
 npm run dev
 ```
 
+The site supports internationalization (i18n) with German (de) as the default language and English (en) as an additional language. Pages are automatically served based on the URL path:
+
+- `/path` - German version
+- `/en/path` - English version
+
+To add translations to a new page:
+
+1. Create the German version at `src/pages/yourpage.astro`
+2. Create the English version at `src/pages/en/yourpage.astro`
+3. Use `getRelativeLocaleUrl()` from `astro:i18n` to generate locale-aware links
+
 To upgrade dependencies execute
 
 ```shell
@@ -67,6 +86,16 @@ To create a new blog post execute
 ```shell
 npm run new-post \<filename\>
 ```
+
+## Internationalization (i18n)
+
+The site is configured with Astro's built-in i18n routing:
+
+- **Default locale**: German (de)
+- **Supported locales**: German (de), English (en)
+- **Routing strategy**: `prefixDefaultLocale: false` - German URLs have no prefix, English URLs are prefixed with `/en/`
+
+Language switcher is available in the header, allowing users to switch between German and English versions.
 
 ## Documentation references
 
