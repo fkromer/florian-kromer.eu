@@ -9,6 +9,9 @@ export const translations = {
     language: 'Language',
     german: 'Deutsch',
     english: 'English',
+    blogPosts: 'Blog Posts',
+    postsTaggedWith: 'Posts tagged with',
+    posts: 'posts',
   },
   de: {
     home: 'Startseite',
@@ -20,6 +23,9 @@ export const translations = {
     language: 'Sprache',
     german: 'Deutsch',
     english: 'English',
+    blogPosts: 'Blog-Artikel',
+    postsTaggedWith: 'Artikel mit Tag',
+    posts: 'Artikel',
   },
 };
 
@@ -28,7 +34,5 @@ export function getTranslation(locale: 'en' | 'de', key: keyof typeof translatio
 }
 
 export function getAlternateLocales(currentLocale: 'en' | 'de'): ('en' | 'de')[] {
-  const locales = ['en', 'de'] as const;
-
-  return locales.filter(locale => locale !== currentLocale);
+  return ['en', 'de'].filter(locale => locale !== currentLocale);
 }
