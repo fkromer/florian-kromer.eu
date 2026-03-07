@@ -1,8 +1,8 @@
 export const translations = {
   en: {
     home: 'Home',
-    professional: 'Professional',
-    volunteer: 'Volunteer',
+    professional: 'Profession',
+    volunteer: 'Volunteering',
     blog: 'Blog',
     tags: 'Tags',
     archive: 'Archive',
