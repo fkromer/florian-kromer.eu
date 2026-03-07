@@ -62,6 +62,12 @@ To upgrade dependencies execute
 npx @astrojs/upgrade
 ```
 
+To create a new blog post execute
+
+```shell
+npm run new-post \<filename\>
+```
+
 ## Documentation references
 
 - [astro documentation](https://docs.astro.build/en/getting-started/) with documentation source code in
