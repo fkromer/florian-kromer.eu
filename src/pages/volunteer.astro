@@ -7,32 +7,48 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         Ehrenamtliche Arbeit
     </h1>
 
-    <div class="prose dark:prose-invert max-w-none">
-        <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
-            Ich bin leidenschaftlich daran interessiert, der Gemeinschaft etwas
-            zurückzugeben und Open-Source-Projekte zu unterstützen.
-        </p>
+    <p class="text-lg text-gray-700 dark:text-gray-300 mb-12">
+        Ich bin leidenschaftlich daran interessiert, der Gemeinschaft etwas
+        zurückzugeben und Open-Source-Projekte zu unterstützen.
+    </p>
 
-        <section class="mb-12">
-            <h2
-                class="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100"
-            >
-                Open-Source-Beiträge
-            </h2>
-            <p class="text-gray-600 dark:text-gray-400 mb-4">
-                Beitrag zu Open-Source-Projekten und Gemeinschaften.
-            </p>
-        </section>
+    <div class="space-y-8">
+        <!-- Timeline Row 1 -->
+        <div class="grid grid-cols-12 gap-4 items-start">
+            <div class="col-span-2">
+                <div class="text-2xl font-bold text-gray-900 dark:text-white">
+                    Zeitraum
+                </div>
+            </div>
+            <div class="col-span-10">
+                <h3
+                    class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2"
+                >
+                    Open-Source-Beiträge
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                    Beitrag zu Open-Source-Projekten und Gemeinschaften.
+                </p>
+            </div>
+        </div>
 
-        <section class="mb-12">
-            <h2
-                class="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100"
-            >
-                Gemeinschaftsarbeit
-            </h2>
-            <p class="text-gray-600 dark:text-gray-400 mb-4">
-                Mentoring und Unterstützung der Tech-Community.
-            </p>
-        </section>
+        <!-- Timeline Row 2 -->
+        <div class="grid grid-cols-12 gap-4 items-start">
+            <div class="col-span-2">
+                <div class="text-2xl font-bold text-gray-900 dark:text-white">
+                    Zeitraum
+                </div>
+            </div>
+            <div class="col-span-10">
+                <h3
+                    class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2"
+                >
+                    Gemeinschaftsarbeit
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                    Mentoring und Unterstützung der Tech-Community.
+                </p>
+            </div>
+        </div>
     </div>
 </BaseLayout>
